@@ -1,0 +1,199 @@
+/* :root {
+    background-color: #1D2222;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --first-background: #fff;
+    --navbar: #7A9D54;
+    --navbar-2: #557A46;
+    --text-color: #D9A436;
+    --bg-button: #FBD85D;
+}
+
+html {
+    overflow-x: hidden;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* text-align: center; */
+    background-color: #fff;
+    /* color: #fff; */
+}
+.header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* padding: 10px 100px; */
+    padding: .8rem 9%;
+    background: #F8F6F4;
+    display: flex;
+    justify-content: space-between;
+    /* text-align: center; */
+
+}
+
+#menu-icon {
+    font-size: 1.6rem;
+    display: none;
+    color: #7A9D54;
+}
+
+.header img {
+    height: 4rem;
+}
+
+.header .navbar { 
+    /* background: #F39F5A; */
+    /* font-weight: 600; */
+    text-align: center;
+    margin-top: 27px;
+}
+.navbar a{
+    text-decoration: none;
+    margin-right: 20px;
+    text-align: center;
+    color: var(--navbar);
+    transition: .2s ease;
+    font-weight: 500;
+    /* margin-top: ; */
+}
+
+.navbar a:hover {
+    color: var(--navbar-2);
+}
+
+h5 {
+ font-size: 35px;
+ margin-bottom: 10px;
+}
+
+.provinsi {
+    margin-bottom: 10px;
+}
+.container {
+    margin: 4rem 8rem;
+    /* padding: 4rem 0 0 4rem; */
+}
+
+.card-header {
+    background-color: var(--bg-button);
+    color: var(--first-background);
+    text-align: center;
+    padding: 10px;
+    border-radius: 28px 28px 0 0;
+}
+
+.table-primary th {
+    background: rgb(119, 130, 199);
+    color: white;
+}
+
+.card {
+    border: 2.5px solid var(--text-color);
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, 
+.table td {
+    text-align: center;
+    padding: 8px;
+}
+
+.table-primary tr {
+    background-color: var(--text-color);
+}
+
+.table-primary td{
+    font-weight: bold;
+    color: #343A40;
+    background-color: var(--text-color);
+}
+
+.apa th {
+    background-color: var(--text-color);
+    color: #343A40;
+}
+
+.hih #list-jadwal {
+    margin-top: 150px;
+}
+
+@media (max-width: 911px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        width: 100%;
+    }
+    .header .navbar {
+        margin-top: 20px;
+        margin-right: -5rem;
+    }
+}
+
+@media (max-width: 617px) {
+    html {
+        font-size: 50%;
+    }
+
+    .card-header h5 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width:450px) {
+   /* .table {
+    width: 10rem;
+   } */
+   .card {
+    font-size: 7px;
+    width: max-content;
+    margin-left: -20px;
+   }
+   #menu-icon {
+    display: block;
+   }
+   .navbar {
+    display: none;
+   }
+   .header {
+    display: block;
+    align-items: flex-start;
+   }
+   .active {
+    display: block;
+   }
+   .navbar .active {
+    display: block;
+   }
+   .navbar a {
+    font-size: 10px;
+    display: block;
+    text-align: left;
+   }
+
+   
+}

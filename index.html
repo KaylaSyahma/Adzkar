@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adzkar</title>
+    <link rel="stylesheet" href="style.css">
+   
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <a href="">
+            <img src="img/Group 15.png" alt="">
+        </a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="index.html" class="active"><strong>Home</strong></a>
+            <a href="jadwalSholat.html">Jadwal Sholat</a>
+            <a href="asmaul-husna.html">Asmaul Husna</a>
+            <a href="ListSurah.html">List Surah</a>
+        </nav>
+    </header>
+
+    
+
+    <section class="oh">
+        <div class="kiri">
+            <h3 class="btn">AR-RA'D : 28</h3>
+            <h2>الَّذِينَ آمَنُوا وَتَطْمَئِنُّ قُلُوبُهُمْ بِذِكْرِ اللَّهِ ۗ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوب</h2>
+            <p>"(yaitu) orang-orang yang beriman dan hati mereka menjadi tenteram dengan mengingat Allah. Ingatlah, hanya dengan mengingat Allah hati menjadi tenteram." </p>
+        </div>
+    
+        <div class="kanan">
+            <img src="img/gambar2.png" alt="">
+        </div>
+    </section>
+    
+    <section class="ih">
+        <div class="kiri">
+            <img src="img/gambar1.png" alt="">
+        </div>
+
+        <div class="kanan">
+            <h3 class="btn">Al-An'am : 162</h3>
+            <p>"Katakanlah [Muhammad], 'Sesungguhnya <span>sholatku</span>, <span>ibadahku</span>, <span>hidupku</span> dan <span>matiku </span>hanyalah untuk <span> Allah, Tuhan seluruh alam</span>.'</p>
+        </div>
+    </section>
+
+    <script>
+        let menuIcon = document.querySelector('#menu-icon')
+let navbar = document.querySelector('.navbar')
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x')
+    navbar.classList.toggle('active')
+}
+
+window.onscroll = () => {
+    menuIcon.classList.remove('remove')
+    navbar.classList.remove('active')
+}
+    </script>
+    
+</body>
+</html>

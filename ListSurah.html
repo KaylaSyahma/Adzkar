@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adzkar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <a href="">
+            <img src="img/Group 15.png" alt="">
+        </a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="jadwalSholat.html">Jadwal Sholat</a>
+            <a href="asmaul-husna.html">Asmaul Husna</a>
+            <a href="ListSurah.html"><strong>List Surah</strong></a>
+        </nav>
+    </header>
+
+    <h2 class="judul">List Surah</h2>
+
+    <div id="result"></div>
+
+    <script>
+        let menuIcon = document.querySelector('#menu-icon')
+let navbar = document.querySelector('.navbar')
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x')
+    navbar.classList.toggle('active')
+}
+
+window.onscroll = () => {
+    menuIcon.classList.remove('remove')
+    navbar.classList.remove('active')
+}
+        window.onload = function() {
+            getData();
+        }
+
+        //ini adalah kode request ke API bang hasan
+        function getData() {
+            fetch("https://api.banghasan.com/quran/format/json/surat")
+            //kita kasih then lalu buat function
+            .then (function (response) {
+                if (!response.ok) { // klo misalkan respon nya tdk oke
+                    throw new Error('Gagal megambil data');
+                }
+                return response.json(); //ini klo berhasil
+            })
+            .then (function(data) {
+                displayData(data);
+            })
+            .catch (function(error) {
+                console.log("Terjdi kesalahan", error);
+            })
+        }
+
+        function displayData(data) {
+            var resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = '';
+
+            data.hasil.forEach(function(surat) {
+                var suratDiv = document.createElement('div');
+                suratDiv.classList.add('surah');
+                suratDiv.className = 'container'
+
+                var namaSurah = document.createElement('h2');
+                namaSurah.textContent = surat.nama;
+                namaSurah.className = 'nama';
+
+                var hr = document.createElement('hr');
+                hr.className = 'hr';
+
+                var namaAsma = document.createElement('p');
+                namaAsma.textContent = "asma: " + " " +surat.asma;
+                namaAsma.className = 'asma';
+
+                var namaType = document.createElement('p');
+                namaType.textContent = "Turun di: " + " " +surat.type;
+                namaType.className = 'type';
+
+                // var namaKeterangan = document.createElement('p');
+                // namaKeterangan.textContent = surat.keterangan;
+                // namaKeterangan.className = 'keterangan';
+
+                suratDiv.appendChild(namaSurah);
+                suratDiv.appendChild(hr);
+                suratDiv.appendChild(namaAsma);
+                suratDiv.appendChild(namaType);
+                // suratDiv.appendChild(namaKeterangan);
+                resultDiv.appendChild(suratDiv);
+
+            })
+        }
+    </script>
+</body>
+</html>

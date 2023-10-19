@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adzkar</title>
+    <link rel="stylesheet" href="sholat.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <a href="">
+            <img src="img/Group 15.png" alt="">
+        </a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="jadwalSholat.html"><strong>Jadwal Sholat</strong></a>
+            <a href="asmaul-husna.html">Asmaul Husna</a>
+            <a href="ListSurah.html">List Surah</a>
+        </nav>
+    </header>
+
+    <div id="result"></div>
+
+    <section class="jadwal-sholat">
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Jadwal Sholat</h5>
+                    <p >Kota/Lokasi: <strong id="city"></strong></p>
+                    <p class="provinsi">Provinsi/Daerah: <strong id="prov"></strong></p>
+                </div>
+
+                <div class="card-cody">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="table-primary">
+                                <tr class="apa">
+                                    <th>Tanggal</th>
+                                    <th>Imsak</th>
+                                    <th>Shubuh</th>
+                                    <th>Terbit</th>
+                                    <th>Dzuhur</th>
+                                    <th>Ashar</th>
+                                    <th>Maghrib</th>
+                                    <th>Isya</th>
+                                </tr>
+                            </thead>
+                            <tbody id="list-jadwal"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="myscript.js">
+    </script>
+</body>
+</html>
